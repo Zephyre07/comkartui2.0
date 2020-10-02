@@ -1,0 +1,41 @@
+{
+    "techName":[
+        {
+            "key":"JAVA"
+        },
+        {
+            "key":"C++"
+        },
+        {
+            "key":"DBA"
+        }
+    ]
+        
+    ,
+    "provider":[
+        {
+            "key":"ORACLE"
+        },
+        {
+            "key":"XYZ"
+        },
+        {
+            "key":"XXYY"
+        }
+
+    ],
+    "certificationName":[
+        {
+            "key":"1zo-808"
+        },
+        {
+            "key":"1zo-809"
+        },
+        {
+            "key":"1zo-809"
+        }
+
+    ]
+
+    
+}

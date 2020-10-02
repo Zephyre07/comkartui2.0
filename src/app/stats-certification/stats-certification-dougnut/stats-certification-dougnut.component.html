@@ -1,0 +1,25 @@
+
+<div class="card-container">
+    <a class="card" [routerLink]="['/stats-certificate/pie-chart']">
+      <span>Pie Chart</span>
+     </a>
+     <a class="card" [routerLink]="['/stats-certificate/bar-chart']">
+      <span>Bar Chart</span>
+     </a>
+     <a class="card" [routerLink]="['/stats-certificate/dougnut']" 
+     style="background-color: #e74a0c; color: white; opacity: 0.8;">
+      <span>Dougnut</span>
+     </a>
+  </div>
+ 
+  <div>
+    <div>
+      <div style="display: block">
+        <canvas baseChart 
+          [data]="doughnutChartData"
+          [labels]="doughnutChartLabels"
+          [chartType]="doughnutChartType">
+        </canvas>
+      </div>
+    </div>
+  </div>

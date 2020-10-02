@@ -1,0 +1,47 @@
+<div class='panel panel-primary'>
+ 
+    <div class='panel-heading'>
+       <h3 class="heading-h3"> {{displayTitle}}</h3>
+    </div>
+    <div class="panel-body" >
+
+      <div class="form-group">
+        <label for="power">Certification Name</label>
+       
+        <select class="form-control" name="certiName" [(ngModel)]='certificateList.certificateName'>
+          <option *ngFor="let name of certificateNames">{{name.key}}</option>
+        </select>
+
+        <label for="power">Technology</label>
+
+       
+        <select class="form-control" name="technology" [(ngModel)]='certificateList.techName'>
+          <option *ngFor="let tech of technologies">{{tech.key}}</option>
+        </select>
+
+        <label for="power">Provider</label>
+
+        <select class="form-control" name="provider" [(ngModel)]='certificateList.provider'>
+          <option *ngFor="let provider of providers">{{provider.key}}</option>
+        </select>
+
+        <label for="power">Certification Date</label>
+
+        <input type="date" class="form-control" name="certificationDate"  [(ngModel)]='certificateList.certificationDate'
+        placeholder="dd-MMM-yyyy" required>
+
+        <label for="power">Valid Till</label>
+        
+        <input type="date" class="form-control" name="validtill"  [(ngModel)]='certificateList.validTo'
+                  placeholder="dd-MMM-yyyy" required>
+
+                  
+                  <!-- <input type="submit" class="button" (click)='onSubmit(certificateList)'  value="Add"> -->
+                  <button class="button" style="vertical-align:middle" (click)='onSubmit(certificateList)'><span>Add </span></button>
+
+      </div>
+      
+    
+  </div>
+  </div>
+  

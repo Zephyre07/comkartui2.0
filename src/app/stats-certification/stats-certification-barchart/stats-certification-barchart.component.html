@@ -1,0 +1,28 @@
+<div class="card-container">
+    <a class="card" [routerLink]="['/stats-certificate/pie-chart']">
+      <span>Pie Chart</span>
+     </a>
+     <a class="card" [routerLink]="['/stats-certificate/bar-chart']" 
+        style="background-color: #e74a0c; color: white; opacity: 0.8;">
+      <span>Bar Chart</span>
+     </a>
+     <a class="card" [routerLink]="['/stats-certificate/dougnut']" >
+      <span>Dougnut</span>
+     </a>
+  </div>
+
+  <div>
+  <div>
+    <div style="display: block">
+      <canvas baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [legend]="barChartLegend"
+        [chartType]="barChartType">
+      </canvas>
+    </div>
+    <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>
+  </div>
+</div>

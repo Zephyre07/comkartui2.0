@@ -1,0 +1,31 @@
+<p>test-connection works!</p>
+<div class="card-container">
+
+    <table class="styled-table">
+        <thead>
+        <tr>
+          <th scope="col" style="text-align:center">#</th>
+          <th scope="col" style="text-align:center">Name</th>
+          <th scope="col" style="text-align:center">Created By</th>
+          <th scope="col" style="text-align:center">Updated By</th>
+          <th scope="col" style="text-align:center">Create Date</th>
+          <th scope="col" style="text-align:center">Update Date</th>
+        
+          
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let currency of currencies; index as i">
+          <th scope="row">{{ i + 1 }}</th>
+          
+          <td>{{ currency.name }}</td>
+          <td>{{ currency.createdBY }}</td>
+          <td>{{ currency.updatedBY }}</td>
+          <td>{{ currency.createdDate }}</td>
+          <td>{{ currency.updatedDate }}</td>
+          
+        
+        </tr>
+        </tbody>
+      </table>
+</div>

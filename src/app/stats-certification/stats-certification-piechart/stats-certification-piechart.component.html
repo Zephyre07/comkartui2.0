@@ -1,0 +1,40 @@
+
+<div class="card-container">
+    <a class="card" [routerLink]="['/stats-certificate/pie-chart']" 
+    style="background-color: #e74a0c; color: white; opacity: 0.8;">
+      <span>Pie Chart</span>
+     </a>
+     <a class="card" [routerLink]="['/stats-certificate/bar-chart']">
+      <span>Bar Chart</span>
+     </a>
+     <a class="card" [routerLink]="['/stats-certificate/dougnut']">
+      <span>Dougnut</span>
+     </a>
+  </div>
+
+  <div>
+    <div>
+      <div class="chart">
+        <canvas baseChart
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          [chartType]="pieChartType"
+          [options]="pieChartOptions"
+          [plugins]="pieChartPlugins"
+          [colors]="pieChartColors"
+          [legend]="pieChartLegend">
+        </canvas>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button mat-button mat-raised-button color="primary" 
+      (click)="pieChartLegend=!pieChartLegend" style="margin-right: 2px;">Toggle Legend</button>
+
+    <button mat-button mat-raised-button color="primary" 
+    (click)="provider()" style="margin-right: 2px;">Provider</button>
+
+    <button mat-button mat-raised-button color="primary" 
+    (click)="technology()" style="margin-right: 2px;">Technology</button>
+
+  </div>

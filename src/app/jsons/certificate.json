@@ -1,0 +1,46 @@
+{
+    "employeeId": "100080_FS",
+    "employeeName": "Shantanu Thakre",
+    "resourceUserId": "shthakre",
+    "empStatus": "I",
+    "mobileNumber": "9970065929",
+    "capgeminiEmailId": "Shantanu.thakre@capgemini.com",
+    "nordeaEmailId": "",
+    "ggId": null,
+    "certificationList": [
+        {
+            "techName": "JAVA",
+            "provider": "ORACLE",
+            "certificateName": "1zo-808",
+            "certificationDate": "2020-08-08",
+            "validFrom": "2020-08-08",
+            "validTo": null
+        },
+        {
+            "techName": "JAVA",
+            "provider": "ORACLE",
+            "certificateName": "1zo-809",
+            "certificationDate": "2019-08-08",
+            "validFrom": "2019-08-08",
+            "validTo": null
+        },
+        {
+            "techName": "JAVA",
+            "provider": "ORACLE",
+            "certificateName": "1zo-809",
+            "certificationDate": "2019-08-08",
+            "validFrom": "2019-08-08",
+            "validTo": null
+        },
+        {
+            "techName": "JAVA",
+            "provider": "ORACLE",
+            "certificateName": "1zo-809",
+            "certificationDate": "2019-08-08",
+            "validFrom": "2019-08-08",
+            "validTo": null
+        }
+    ],
+    "responseMessage": "Success",
+    "responseCode": "200"
+}

@@ -1,0 +1,38 @@
+{
+    "technologyStats":[
+        {
+            "techName":"Java",
+            "value": 30
+        },
+        {
+            "techName":"C++",
+            "value": 45
+        },
+        {
+            "techName":". Net",
+            "value": 10
+        },
+        {
+            "techName":"Java Script",
+            "value": 60
+        }
+    ],
+    "providerStats":[
+        {
+            "providerName":"Oracle",
+            "value": 5
+        },
+        {
+            "providerName":"Amazon",
+            "value": 10
+        },
+        {
+            "providerName":"Microsoft",
+            "value": 2
+        },
+        {
+            "providerName":"Google",
+            "value": 5
+        }
+    ]
+}

@@ -1,0 +1,92 @@
+{
+    "monthlyStats":[
+        {
+            "month":"June",
+            "content":[
+                    {
+                        "techName":"Java",
+                        "value": 30
+                    },
+                    {
+                        "techName":"C++",
+                        "value": 45
+                    },
+                    {
+                        "techName":". Net",
+                        "value": 10
+                    },
+                    {
+                        "techName":"Java Script",
+                        "value": 60
+                    }
+                ]
+            
+        },
+        {
+            "month":"July",
+            "content":[
+                    {
+                        "techName":"Java",
+                        "value": 20
+                    },
+                    {
+                        "techName":"C++",
+                        "value": 55
+                    },
+                    {
+                        "techName":". Net",
+                        "value": 5
+                    },
+                    {
+                        "techName":"Java Script",
+                        "value": 50
+                    }
+                ]
+            
+        },
+        {
+            "month":"August",
+            "content":[
+                    {
+                        "techName":"Java",
+                        "value": 40
+                    },
+                    {
+                        "techName":"C++",
+                        "value": 45
+                    },
+                    {
+                        "techName":". Net",
+                        "value": 10
+                    },
+                    {
+                        "techName":"Java Script",
+                        "value": 55
+                    }
+                ]
+            
+        },
+        {
+            "month":"September",
+            "content":[
+                    {
+                        "techName":"Java",
+                        "value": 33
+                    },
+                    {
+                        "techName":"C++",
+                        "value": 25
+                    },
+                    {
+                        "techName":". Net",
+                        "value": 15
+                    },
+                    {
+                        "techName":"Java Script",
+                        "value": 66
+                    }
+                ]
+            
+        }
+    ]
+}
