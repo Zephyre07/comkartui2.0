@@ -1,47 +1,98 @@
-<div class='panel panel-primary'>
- 
-    <div class='panel-heading'>
-       <h3 class="heading-h3"> {{displayTitle}}</h3>
-    </div>
-    <div class="panel-body" >
+<div class="row">
+  <div class="col-md-4">
 
-      <div class="form-group">
-        <label for="power">Certification Name</label>
-       
-        <select class="form-control" name="certiName" [(ngModel)]='certificateList.certificateName'>
-          <option *ngFor="let name of certificateNames">{{name.key}}</option>
-        </select>
+  </div>
 
-        <label for="power">Technology</label>
+  <div class="col-md-4">
+    <div class='panel panel-primary'>
 
-       
-        <select class="form-control" name="technology" [(ngModel)]='certificateList.techName'>
-          <option *ngFor="let tech of technologies">{{tech.key}}</option>
-        </select>
-
-        <label for="power">Provider</label>
-
-        <select class="form-control" name="provider" [(ngModel)]='certificateList.provider'>
-          <option *ngFor="let provider of providers">{{provider.key}}</option>
-        </select>
-
-        <label for="power">Certification Date</label>
-
-        <input type="date" class="form-control" name="certificationDate"  [(ngModel)]='certificateList.certificationDate'
-        placeholder="dd-MMM-yyyy" required>
-
-        <label for="power">Valid Till</label>
-        
-        <input type="date" class="form-control" name="validtill"  [(ngModel)]='certificateList.validTo'
-                  placeholder="dd-MMM-yyyy" required>
-
-                  
-                  <!-- <input type="submit" class="button" (click)='onSubmit(certificateList)'  value="Add"> -->
-                  <button class="button" style="vertical-align:middle" (click)='onSubmit(certificateList)'><span>Add </span></button>
-
+      <div class='panel-heading'>
+        <h3 class="heading-h3"> {{displayTitle}}</h3>
       </div>
-      
-    
+      <div class="panel-body">
+
+        <form name="userForm" novalidate>
+          <div class="form-group">
+
+            <!--  <input id="name" name="name" class="form-control"
+          required minlength="4" appForbiddenName="bob"
+          [(ngModel)]="certificateList.certificateName" #name="ngModel" > -->
+            <label for="power">Certification Name</label>
+
+            <select class="form-control" name="certiName" [(ngModel)]='certificateList.certificateName' required
+              #certiName="ngModel">
+              <option *ngFor="let name of certificateNames">{{name.key}}</option>
+            </select>
+
+            <label for="power">Technology</label>
+
+
+            <select class="form-control" name="technology" [(ngModel)]='certificateList.techName' required
+              #technology="ngModel">
+              <option *ngFor="let tech of technologies">{{tech.key}}</option>
+            </select>
+
+            <label for="power">Provider</label>
+
+            <select class="form-control" name="provider" [(ngModel)]='certificateList.provider' required
+              #provider="ngModel">
+              <option *ngFor="let provider of providers">{{provider.key}}</option>
+            </select>
+
+            <label for="power">Certification Date</label>
+
+            <input type="date" class="form-control" name="certificationDate"
+              [(ngModel)]='certificateList.certificationDate' placeholder="dd-MMM-yyyy" required
+              #certificationDate="ngModel">
+
+            <label for="power">Valid Till</label>
+
+            <input type="date" class="form-control" name="validtill" [(ngModel)]='certificateList.validTo'
+              placeholder="dd-MMM-yyyy" required #validtill="ngModel">
+
+
+            <!-- <input type="submit" class="button" (click)='onSubmit(certificateList)'  value="Add"> -->
+            <button class="button" style="vertical-align:middle" (click)='onSubmitCertificate(certificateList)'
+              ng-disabled="userForm.$invalid">
+              <span>Add </span>
+            </button>
+
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
+
+  <div class="col-md-4">
+
+    <div *ngIf="saved" class="alert alert-success box-msg" role="alert">
+      <strong>Certification Added!</strong> Your changes has been saved.
+    </div>
+
+    <div *ngIf="certiName.invalid && (certiName.dirty || certiName.touched)" class="alert alert-danger">
+      Certification Name is required.
+
+    </div>
+
+    <div *ngIf="technology.invalid && (technology.dirty || technology.touched)" class="alert alert-danger">
+      Technology is required.
+
+    </div>
+
+    <div *ngIf="provider.invalid && (provider.dirty || provider.touched)" class="alert alert-danger">
+      Provider is required.
+    </div>
+
+    <div *ngIf="certificationDate.invalid && (certificationDate.dirty || certificationDate.touched)" class="alert alert-danger">
+      certification Date is required.
+    </div>
+
+    <div *ngIf="validtill.invalid && (validtill.dirty || validtill.touched)" class="alert alert-danger">
+      valid Till Date is required.
+    </div>
+
   </div>
-  
+
+
+
+</div>

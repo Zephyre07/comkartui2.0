@@ -8,33 +8,35 @@ import { ICertificate } from './model/ICertificate';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json',
+    'Content-Type': 'application/json',
     'Authorization': 'my-auth-token',
-    'Access-Control-Allow-Origin':'*'
+    'Access-Control-Allow-Origin': '*'
   })
 };
 @Injectable()
 export class ComkartServiceService {
 
-  private _currencyUrl='http://localhost:8080/comKart/currencies';
-  private _currencyUrlJson='./jsons/certificate.json';
-  
+  private _comkartUrl = 'http://localhost:8080/comKart';
 
-  constructor(private _http: HttpClient)
-    {
+  //test url for connection-test tab
+  private _currencyUrl = 'http://localhost:8080/comKart/currencies';
 
-    }
+  //private _currencyUrlJson = './jsons/certificate.json';
 
 
-    onView():Observable<ICertificate>{
-      //console.log(currency);
-      
-      //return this._http.get<ICurrency[]>(this._currencyUrl);
-      return this._http.get<ICertificate>(this._currencyUrl);
-    }
+  constructor(private _http: HttpClient) { }
 
-    getCurrency():Observable<ICurrency[]>{
-      return this._http.get<ICurrency[]>(this._currencyUrl);
-    }
+  getCurrency(): Observable<ICurrency[]> {
+    return this._http.get<ICurrency[]>(this._currencyUrl);
+  }
+    
+    //To get the JSON with emp details and Certification list. GET: /certificate/{empId}
+  employeeCertificationListView(empId: string): Observable<ICertificate> {
+    return this._http.get<ICertificate>(this._comkartUrl + "/certificate/empId");
+  }
 
+    //To save the certificate. POST: /certificate/save
+  onRegisterCertificate(certificate:ICertificate): Observable<any> {
+    return this._http.post<any>(this._comkartUrl + '/certificate/save', certificate);
+  }
 }

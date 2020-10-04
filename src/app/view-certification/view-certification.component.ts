@@ -15,27 +15,34 @@ export class ViewCertificationComponent implements OnInit {
   constructor(private _certificationService:ComkartServiceService) { }
 
   errorMessage:String;
-  currencies: ICertificateList[]=[];
-  name:string=certJson.employeeName;
-  numberOfCertification:number=certJson.certificationList.length;
+  certificates: ICertificateList[]=[];
+  name:string="";
+  numberOfCertification:number=0;
+  empId:string="100080_FS";
 
   ngOnInit(): void {
-    console.log("In ngOnit");
-    //this.onView();
-    this.load();
+
+    //this.onView(this.empId);  //TODO: This to be replaced with load(), so that it can fetch data from onCertificationView()
+    this.load(this.empId);
   }
 
-  load():void{
-    this.currencies=certJson.certificationList;
-    console.log("JSONS:"+ this.currencies);
+  load(employeeId:string):void{
+    this.certificates=certJson.certificationList;
+    this.name=certJson.employeeName;
+    this.numberOfCertification=certJson.certificationList.length;
+    
+    this.empId=employeeId;
+    
+    console.log("JSONS:"+ this.certificates);
+    console.log("Emp ID:"+ this.empId);
   }
 
-  onView():void{
-    console.log(this._certificationService.onView()._subscribe);
+  onView(empId:string):void{
+    console.log(this._certificationService.employeeCertificationListView(empId)._subscribe);
 
-    this._certificationService.onView().subscribe(
+    this._certificationService.employeeCertificationListView(empId).subscribe(
       currency=>{
-        this.currencies=currency.certificationList;
+        this.certificates=currency.certificationList;
         console.log("INCOMING:"+currency);
       },
       error => this.errorMessage= <any>error

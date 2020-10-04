@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ICertificate } from '../model/ICertificate';
 import { ICertificateList } from '../model/ICertificateList';
 import certificateFields from '../jsons/certificateFields.json'
-
+import { ComkartServiceService } from '../comkart-service.service';
 
 @Component({
   selector: 'app-add-certification',
@@ -11,51 +11,52 @@ import certificateFields from '../jsons/certificateFields.json'
 })
 export class AddCertificationComponent implements OnInit {
 
-  //constructor(private _customerService:CustomerService) { }
+  constructor(private _certificationService:ComkartServiceService) { }
 
   displayTitle:string='Certification Form';
+
+  //Drop down fields
   technologies:any[]=[];
   certificateNames:any[]=[];
   providers:any[]=[];
 
+  //Boolean to toggle show/hide "Certification Added!" message
+  saved:boolean=false;
+
+  //Initializing Form fields withdefault values
   certificateList:ICertificateList={
     techName:"",
     provider:"",
     certificateName:"",
     certificationDate:null,
-    validFrom:null,
     validTo:null
   };
 
-  // certificate:ICertificate={
-
-  //   employeeId:0,
-  //   employeeName:"",
-  //   resourceUserId:"",
-  //   empStatus:"",
-  //   mobileNumber:"",
-  //   capgeminiEmailId: "",
-  //   nordeaEmailId:"",
-  //   ggId:"",
-  //   certificationList:this.certificateList,
-  //   responseMessage:"",
-  //   responseCode:""
-  // };
 
   ngOnInit() {
     this.loadData();
   }
 
   loadData():void{
-    this.technologies=certificateFields.techName;
     console.log(this.technologies);
+
+    //TODO: Replace certificateFields json with the a getter service to getCertificate()
+    this.technologies=certificateFields.techName;
     this.certificateNames=certificateFields.certificationName;
     this.providers=certificateFields.provider;
 
   }
 
-  onSubmit(customer:ICertificateList):void{
-    console.log(customer);
-    //this._customerService.onRegister(customer).subscribe();
+  onSubmitCertificate(certificate: ICertificateList): void {
+
+    /* this._certificationService.onRegisterCertificate(certificate).subscribe(certificate=>{
+      this.saved=true;
+    });
+ */
+
+    //Replace the below code with above commented code
+    console.log(certificate);
+    this.saved = true;
+
   }
 }

@@ -13,32 +13,28 @@
             "provider": "ORACLE",
             "certificateName": "1zo-808",
             "certificationDate": "2020-08-08",
-            "validFrom": "2020-08-08",
-            "validTo": null
+            "validTo": "2020-08-08"
         },
         {
             "techName": "JAVA",
             "provider": "ORACLE",
             "certificateName": "1zo-809",
             "certificationDate": "2019-08-08",
-            "validFrom": "2019-08-08",
-            "validTo": null
+            "validTo": "2019-08-08"
         },
         {
             "techName": "JAVA",
             "provider": "ORACLE",
             "certificateName": "1zo-809",
             "certificationDate": "2019-08-08",
-            "validFrom": "2019-08-08",
-            "validTo": null
+            "validTo": "2019-08-08"
         },
         {
             "techName": "JAVA",
             "provider": "ORACLE",
             "certificateName": "1zo-809",
             "certificationDate": "2019-08-08",
-            "validFrom": "2019-08-08",
-            "validTo": null
+            "validTo": "2019-08-08"
         }
     ],
     "responseMessage": "Success",
